@@ -1,8 +1,40 @@
-// Escribe una función que acepte un array con 10 números enteros positivos
-// (entre 0 y 9) y devuelva una cadena de texto con esos números en forma de
-// número de teléfono.
-// ejemplo
-// createPhoneNumber([5, 5, 5, 1, 3, 4, 7, 8, 9, 0]) => devuelve "(555) 134-
-// 7890"
-// createPhoneNumber([3, 0, 5, 1, 2, 7, 7, 2, 4, 9]) => devuelve "(305) 127-
-// 7249"
+// Dado un array de nombres, tu objetivo es crear una función que cuente cuántas veces se repite cada nombre y los
+// represente con asteriscos (*).
+// Debes implementar la función countNameRepetitions(names), que tomará como parámetro un array de nombres y devolverá
+// un objeto con los nombres y su representación de asteriscos correspondiente.
+// Ejemplo:
+// const nombres = ['Juan','María','Pedro','Juan','María','María'];
+// Llamada a la función
+// const resultado = countNameRepetitions(nombres);
+// Resultado esperado
+// Juan: '**',
+// María: '***',
+// Pedro: '*'
+// En el ejemplo anterior, se tiene un array de nombres donde 'Juan' se repite dos veces,'María' se repite tres veces
+// y 'Pedro' se repite una vez.
+// La función countNameRepetitions debe imprimir los nombres y su representación de asteriscos correspondiente.
+// Recuerda que cada vez que un nombre se repite, se debe agregar un asterisco adicional al valor asociado al nombre
+// en el objeto de resultado.
+
+function countNameRepetitions(nombres) {
+    let nombreRepetido = []
+    nombres.forEach(nombre => {
+        if (!nombreRepetido.includes(nombre)){
+            nombreRepetido.push(nombre)
+        }
+    });
+
+    for (let i = 0; i < nombreRepetido.length; i++){
+        let nombre = nombreRepetido[i]
+        let contador = ""
+        for (let i = 0; i < nombres.length; i++){
+            if (nombre === nombres[i]){
+                contador = contador + "*"
+            }
+        }
+        console.log(nombre + ": " + contador)
+    }
+    }
+    
+    let nombres = ['Juan','María','Pedro','Juan','María','María']
+countNameRepetitions(nombres)
