@@ -8,26 +8,21 @@
 // 7249"
 
 
-// function createPhoneNumber(numbers){
-//     var phone = numbersjoin().replace(/\D/g,'');
-//     var format = phone.match(/^(\d{3})(\d{3})(\d{4})$/);
-//     if (format) {
-//         return `(${format[1]}) ${(format[2])}-${format[3]}`;
-//     }
-//     return phone;
-// }
+function createPhoneNumber(numbers){
+    if (numbers.length !== 10) {
+        return "El numero ingresado debe ser de 10 digitos";
+    }
 
+    let formatoNumeros = "(";
+    for (let i = 0; i < numbers.length; i++) {
+        if (i === 3) {
+            formatoNumeros += ") ";
+        } else if (i === 6) {
+            formatoNumeros += "-";
+        }
+        formatoNumeros += numbers[i];
+    }
+    return formatoNumeros;
+}
 
-// console.log(createPhoneNumber(1112223333));
-
-// function createPhoneNumber(number){
-//     let numbers = number.length
-//     if (numbers == 9){
-//     console.log(numbers.splice(0, 0, "(") + ")" + numbers.splice(4, 0, ")") + " " + numbers.splice(9, 0, "-"))}
-// else {
-//     return "ingrese un numero telefonico de 10 digitos"
-// }
-// }
-
-// console.log(createPhoneNumber("1234567890"));
- 
+console.log(createPhoneNumber([5, 5, 5, 1, 3, 4, 7, 8, 9, 0]))
