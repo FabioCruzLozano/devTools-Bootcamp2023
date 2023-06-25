@@ -7,7 +7,7 @@ const drawX = (tamano) => {
     for (let i = 0; i < tamano; i++) {
         let linea = "";
         for (let asterist = 0; asterist < tamano; asterist++) {
-            if (asterist === i|| asterist === tamano - asterist - 1) {
+            if (asterist === i || asterist === tamano - i - 1) {
                 linea += "*";
             } else {
                 linea += " ";
